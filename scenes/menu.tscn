@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtqg1v87dx5su"]
+
+[ext_resource type="Script" uid="uid://1a51evgs7dik" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://ct2yuhjl2lcn" path="res://images/main-menu-bg.jpg" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://cln875ph4njm2" path="res://images/sleeping-knights.png" id="3_4ytvr"]
+
+[node name="Control" type="Node2D"]
+script = ExtResource("1_con2f")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_mhnvy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_bottom = 0.062000003
+offset_left = 18.0
+offset_top = 57.0
+offset_right = 58.0
+offset_bottom = 56.823997
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 226.0
+offset_right = 705.0
+offset_bottom = 266.0
+scale = Vector2(10, 10)
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 249.0
+offset_right = 1178.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 60
+text = "Sleepy D&D"
+
+[node name="HostButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 939.0
+offset_top = 447.0
+offset_right = 1107.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 30
+text = "Host Game"
+
+[node name="JoinButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 382.0
+offset_right = 1224.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 30
+text = "Join Game"
+
+[node name="Quit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 504.0
+offset_right = 1065.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="IP" type="LineEdit" parent="Control"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 381.0
+offset_right = 1057.5625
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Enter IP Address"
+
+[node name="Log" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 559.0
+offset_right = 1397.0
+offset_bottom = 625.0
+
+[node name="SleepingKnights" type="Sprite2D" parent="."]
+position = Vector2(101, 984)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_4ytvr")
+
+[connection signal="pressed" from="Control/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="Control/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

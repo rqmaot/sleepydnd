@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba5utcwhxf7l5"]
+
+[ext_resource type="Texture2D" uid="uid://cln875ph4njm2" path="res://images/sleeping-knights.png" id="1_ir5ef"]
+
+[node name="Loading" type="Node2D"]
+
+[node name="SleepingKnights" type="Sprite2D" parent="."]
+position = Vector2(925, 456)
+texture = ExtResource("1_ir5ef")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 808.0
+offset_top = 992.0
+offset_right = 1013.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 44
+text = "Loading..."
