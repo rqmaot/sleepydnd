@@ -1,0 +1,22 @@
+{
+	"maps": [
+		{
+			"image": "chess.jpg",
+			"grid": 24,
+			"color": "#FFFFFF40",
+			"tokens": [
+				[10, 10, "skeleton.png"],
+				[10, 12, "skeleton.png"],
+				[1, 1, "skeleton.png"]
+			]
+		},
+		{
+			"image": "isles.jpg",
+			"grid": 75,
+			"color": "00000080",
+			"tokens": [
+				[3, 2, "skeleton.png"]
+			]
+		}
+	]
+}

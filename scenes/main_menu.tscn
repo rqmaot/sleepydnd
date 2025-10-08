@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceoh8b7ixkfeu"]
+
+[ext_resource type="Script" uid="uid://c2n4ws0so0uxc" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://ct2yuhjl2lcn" path="res://images/main-menu-bg.jpg" id="2_ekxnf"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 327)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ekxnf")
+
+[node name="Menu" type="ColorRect" parent="."]
+offset_right = 352.0
+offset_bottom = 264.0
+
+[node name="JoinButton" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 91.0
+offset_right = 115.0
+offset_bottom = 122.0
+text = "Join"
+
+[node name="HostButton" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 149.0
+offset_right = 122.0
+offset_bottom = 180.0
+text = "Host"
+
+[connection signal="pressed" from="Menu/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="Menu/HostButton" to="." method="_on_host_button_pressed"]

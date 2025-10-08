@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://feqq1j4j0a35"]
+
+[ext_resource type="Script" uid="uid://c3osuinueyf37" path="res://scripts/board.gd" id="1_bw3vb"]
+
+[node name="Board" type="Sprite2D"]
+script = ExtResource("1_bw3vb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -19.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0

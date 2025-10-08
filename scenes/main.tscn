@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdhrsqj54wgq5"]
+
+[ext_resource type="Script" uid="uid://be06om2wsr2j3" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://feqq1j4j0a35" path="res://scenes/board.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dn7v4dv4uki5q" path="res://scenes/pause_menu.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dmr7eppaohdcq" path="res://scenes/host_controls.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://ceoh8b7ixkfeu" path="res://scenes/main_menu.tscn" id="4_o6xl0"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sugp2"]
+properties/0/path = NodePath(".:token_array")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:game_dir")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:map_index")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jyhfs")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_sugp2")
+
+[node name="MainMenu" parent="." instance=ExtResource("4_o6xl0")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_tbgi4")]
+visible = false
+
+[node name="Board" parent="." instance=ExtResource("3_sugp2")]
+
+[node name="Player" type="Node" parent="."]
+
+[node name="Tokens" type="Node" parent="."]
+
+[node name="HostControls" parent="." instance=ExtResource("4_jyhfs")]
+
+[connection signal="quit" from="PauseMenu" to="." method="_on_pause_menu_quit"]
+[connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]
+[connection signal="change_map" from="HostControls" to="." method="_on_host_controls_change_map"]

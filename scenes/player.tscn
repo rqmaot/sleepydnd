@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkwkny2f2rvfx"]
+
+[ext_resource type="Script" uid="uid://jq4p3wjkib0w" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_3vyb7")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Coords" type="Label" parent="."]
+visible = false
+offset_left = -144.0
+offset_top = -13.0
+offset_right = 144.0
+offset_bottom = 10.0
+text = "(x,y)"
+horizontal_alignment = 1
